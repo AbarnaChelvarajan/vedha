@@ -1,0 +1,173 @@
+Phase 1 - Topics
+Agile
+Database - MySQL
+Git
+HTML
+CSS
+JavaScript
+Angular
+Cypress using JavaScript
+========================================================================
+MySQL Installation
+================== MYSQL Installation on WINDOWS =====================
+·       Step 1: Visit the Official MySQL Website: https://dev.mysql.com/downloads/installer/
+·       Step 2: Go to the Downloads Section
+·       Step 3: Run the Installer
+·       Step 4: Choose Setup Type as “Developer Default” and Click “Next”
+·       Step 5: Check Requirements - You might be prompted to install necessary MySQL software, typically Visual Code. The installer can auto-resolve some issues, but not in this case.
+·       Step 6: MySQL Downloading - click “Execute” to start downloading the components you selected.
+·       Step 7: MySQL Installation - Click “Execute” to start the installation process, after installation click Next to proceed
+·       Step 8: Navigate to Few Configuration Pages-Proceed to “Product Configuration” > “Type and Networking” > “Authentication Method” Pages by clicking the “Next” button.
+·       Step 9: Create MySQL Accounts - Create a password for the MySQL root user. Ensure it’s strong and memorable. Click “Next” to proceed.
+·       Step 10: Connect To Server - Enter the root password, click Check. If it says “Connection succeeds,” you’ve successfully connected to the server. Click “Next” to proceed.
+·       Step 11: Complete Installation - Once the installation is complete, click “Finish.
+================== MYSQL Installation on macOS =====================
+·       Step 1: Visit the Official MySQL Website: https://www.mysql.com/downloads/
+·       Step 2: Click on MySQL Community (GPL) Downloads »
+·       Step 3: Click on MySQL Community Server
+·       Step 4: Select Operating System as "macOS" and click on download for any version
+·       Step 5: Double click on the file downloaded and click on the continue button.
+·       Step 6: Then click on the install button to move forward.
+·       Step 7: Then click on the Next button for the next process.
+·       Step 8: Provide some strong passwords and then click on the Finish button.
+·       Step 9: Then you will find your installation is successful.
+----------HOW TO USE MYSQL on macOS----------------------------------------------------------------
+·       Step 1: Open the terminal and navigate to the installed folder.
+·       Step 2: run the command  “mysql -u root –p”
+================== MYSQL Installation on Linux =====================
+·       Step 1: Open terminal using Ctrl+Alt+T.
+·       Step 2: Enter "sudo apt install mysql-server" to install MySQL in Linux.
+·       Step 3: Then give your password and hit ENTER.
+·       Step 4: Press “y” to continue.
+SET PASSWORD
+o   sudo mysql_secure_installation
+o   Then press “y” to set the password.
+o   Next press “0”or"1"or"2" for the low-level password or choose as you want to set the password.
+o   Create a password. Then Re-enter the password, then to continue press “y”.
+To use MYSQL on Linux, run command “sudo mysql -u root”
+======================================================================
+
+
+
+
+Access mySQL on Lab:
+Open the Terminal
+Run the command> sudo mysql -u root
+
+
+
+>show databases;
+>create database mydata;
+
+
+DDL(Data Definition Language)
+Create
+Drop
+ALter
+Truncate
+DQL(Data Query Language)
+Select
+DML(Data Manipulation Language)
+Insert
+Update
+Delete
+DCL(Data Control Language)
+Grant
+Revoke
+
+
+Create Table
+create table personal(PersonalID int,FirstName varchar(255),LastName varchar(255));
+
+Insert Record
+insert into personal(PersonalID,FirstName,LastName) Values (1,Raghu,Trainer);
+
+insert into personal(PersonalID,FirstName,LastName) Values (2,’TestFirst’,’TestLast’),(3,’TestiFirst’,’TestiLast’),(4,’TestjFirst’,’TestjLast’),(5,’TestkFirst’,’TestkLast’);
+
+
+update personal set FirstName='Raghava' where PersonalID=3
+
+delete from personal where PersonalID=4;
+=======================================================================
+Fetch data from the Table
+
+Select * from personal;
+Select FirstName,LastName from personal;
+Select * from personal where personalID=1;
+select count(FirstName) from personal;
+Select * from personal where personalID=2 and LastName=’TestLast’;
+select * from personal LIMIT 2;
+
+
+
+
+
+
+
+6369384738
+
+create table products(SNo int,ProductCategory varchar(255),ProductName varchar(255),Price int);
+Insert into products(SNo,ProductCategory,ProductName,Price) values (1,Electronics,TV,12345);
+
+
+select MIN(Price) from products;
+select MAX(Price) from products;
+select MIN(Price) as smallestPrice from products;
+
+
+select count(SNo),ProductCategory from products group by ProductCategory;
+
+select count(SNo),ProductCategory from products group by ProductCategory order by count(SNo) DESC;
+select count(SNo),ProductCategory from products group by ProductCategory order by count(SNo) ASC;
+
+select count(SNo),ProductCategory from products group by ProductCategory having count(SNo)>2;
+
+ select count(SNo),ProductCategory from products group by ProductCategory having count(SNo)>2 order by count(SNo) ASC;
+
+ drop table drop_products;
+truncate table del_products;
+
+—-------------------------------------------------------------------------------------------------------------------------
+
+
+JOINS
+Inner Join
+Left Join
+Right Join
+Full Outer Join
+
+Inner Join or Join
+select PersonalID, FirstName,ProductCategory, ProductName 
+from personal 
+inner join 
+products 
+ON 
+personal.PersonalID=products.SNo;
+
+
+Left Join
+ select PersonalID, FirstName,ProductCategory, ProductName from personal left join products ON personal.PersonalID=products.SNo;
+
+Right Join
+ select PersonalID, FirstName,ProductCategory, ProductName from personal right join products ON personal.PersonalID=products.SNo;
+
+Full Outer Join
+select PersonalID, FirstName,ProductCategory, ProductName from personal left join products ON personal.PersonalID=products.SNo 
+Union  
+select PersonalID, FirstName,ProductCategory, ProductName from personal right join products ON personal.PersonalID=products.SNo;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
